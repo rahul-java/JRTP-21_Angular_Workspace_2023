@@ -1,0 +1,36 @@
+<h1>Welcome to Angular Framework</h1>
+
+<h2>Interpolation</h2>
+<h2>{{msg}}</h2>
+<h3>It is used to send the data from component to template.</h3>
+<hr>
+<div>
+<h4>Data Binding  Example</h4>
+First Name : {{fname}}<br>
+Last Name : {{lname}}<br>
+Age : {{age}}<br>
+Gender : {{gender}}<br>
+Country : {{country}}<br>
+Is Employeed : {{isEmployed}}<br>
+
+<hr>
+
+Enter First Name  : <input type="text" [(ngModel)]="fname"/><br>
+Enter Last Name   : <input type="text" [(ngModel)]="lname"/><br>
+Enter Age         : <input type="text"  [(ngModel)]="age"/><br>
+Enter Gender      : <input type="radio"  [(ngModel)]="gender" value="Male"/>Male
+                    <input type="radio"  [(ngModel)]="gender" value="Female"/>Female<br>
+Enter Country     : <select [(ngModel)]="country">
+<option>India</option>
+<option>USA</option>
+<option>UK</option>
+<option>China</option>
+<option>Russia</option>
+</select><br>
+Enter IsEmployeed : <input type="checkbox" [(ngModel)]="isEmployed"/><br>
+
+<input type="submit"  (click)="handleSubmitButton()"/>
+</div>
+<hr>
+
+

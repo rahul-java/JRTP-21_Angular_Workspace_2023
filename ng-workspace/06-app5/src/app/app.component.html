@@ -1,0 +1,25 @@
+<div>
+  <h3>ngFor Directive Display Objects Array[Employee]</h3>
+  <table border="1">
+    <tr>
+      <th>Emp Id</th>
+      <th>Emp Name</th>
+      <th>Emp Salary</th>
+      <th>Action</th>
+    </tr>
+    <tr *ngFor="let emp of employees;let i=index;">
+      <td>{{emp.empId}}</td>
+      <td>{{emp.empname}}</td>
+      <td>{{emp.salary}}</td>
+      <td><input type="button" value="Delete" (click)="onDeleteClick(i)"/></td>
+
+    </tr>
+    <tr>
+      <td><input type="text" [(ngModel)]="newemployee.empId" placeholder="Emp Id"/></td>
+      <td><input type="text" [(ngModel)]="newemployee.empname" placeholder="Emp Name"/></td>
+      <td><input type="text" [(ngModel)]="newemployee.salary" placeholder="Emp Salary"/></td>
+      <td><input type="button" value="Insert" (click)="onInsertClick()"/></td>
+    </tr>
+  </table>
+</div>
+  <hr/>

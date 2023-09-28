@@ -1,0 +1,53 @@
+<div>
+  <h3>Style Directive Example</h3>
+  <div [style.color]="mycolor">{{marks}}</div>
+<hr/>
+  <h3>ngClass Directive Example</h3>
+  <div [ngClass]="myClass">{{marks}}</div>
+<hr/>
+  <h3>ngIf Directive Example</h3>
+  <div *ngIf="b" style="background-color: green;">Congratulations !!!</div>
+  <div *ngIf="!b" style="background-color: red;">Better Luck Next Time !!!</div>
+  <hr/>
+  <h3>ngSwitch Directive Example b using ngModel </h3>
+  <select [(ngModel)]="country">
+    <option>India</option>
+    <option>USA</option>
+    <option>UK</option>
+    <option>China</option>
+    <option>Japan</option>
+  </select>
+  <div [ngSwitch]="country">
+    <p *ngSwitchCase="'India'">India Details here...</p>
+    <p *ngSwitchCase="'USA'">USA Details here...</p>
+    <p *ngSwitchCase="'UK'">UK Details here...</p>
+    <p *ngSwitchCase="'China'">China Details here...</p>
+    <p *ngSwitchCase="'Japan'">Japan Details here...</p>
+    <p *ngSwitchDefault>Please Select Country</p>
+    <hr/>
+  </div>
+
+  <h3>ngFor Directive Example</h3>
+  <ul>
+    <li *ngFor="let city of cities">{{city}}</li>
+  </ul>
+  <hr/>
+
+  <div>
+  <h3>ngFor Directive Display Array of Objects[Employee]</h3>
+  <table border="1">
+    <tr>
+      <th>Emp Id</th>
+      <th>Emp Name</th>
+      <th>Emp Salary</th>
+    </tr>
+    <tr *ngFor="let emp of employees">
+      <td>{{emp.empId}}</td>
+      <td>{{emp.empname}}</td>
+      <td>{{emp.salary}}</td>
+
+    </tr>
+  </table>
+</div>
+  <hr/>
+</div>

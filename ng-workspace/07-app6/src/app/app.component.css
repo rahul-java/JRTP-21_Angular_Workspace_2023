@@ -1,0 +1,12 @@
+.class1{
+    border: 5px solid red;
+    margin: 20px;
+    padding: 10px;
+    color: red;
+}
+.class2{
+    border: 5px solid green;
+    margin: 20px;
+    padding: 10px;
+    color: green;
+}

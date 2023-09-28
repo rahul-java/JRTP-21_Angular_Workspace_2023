@@ -1,0 +1,42 @@
+<div>
+  <h3>ngFor Directive With Searching and Sorting</h3>
+  <input type="text" placeholder="Search By EmpName" [(ngModel)]="str" />
+  <input type="button" value="Search By EmpName" (click)="onSearchCLick()" />
+  <br/>
+Sort :
+<select [(ngModel)]="sortcolumn">
+  <option>empId</option>
+  <option>empname</option>
+  <option>salary</option>
+
+</select>
+<select [(ngModel)]="order">
+  <option value="1">Ascending Order</option>
+  <option value="-1">Descending Order</option>
+</select>
+<input type="button" value="Sort" (click)="onSortClick()" />
+<br/>
+
+  <table border="1">
+    <tr>
+      <th>Emp Id</th>
+      <th>Emp Name</th>
+      <th>Emp Salary</th>
+      <th>Action</th>
+    </tr>
+    <tr *ngFor="let emp of employees;let i=index;">
+      <td>{{emp.empId}}</td>
+      <td>{{emp.empname}}</td>
+      <td>{{emp.salary}}</td>
+      <td><input type="button" value="Delete" (click)="onDeleteClick(i)"/></td>
+
+    </tr>
+    <tr>
+      <td><input type="text" [(ngModel)]="newemployee.empId" placeholder="Emp Id"/></td>
+      <td><input type="text" [(ngModel)]="newemployee.empname" placeholder="Emp Name"/></td>
+      <td><input type="text" [(ngModel)]="newemployee.salary" placeholder="Emp Salary"/></td>
+      <td><input type="button" value="Insert" (click)="onInsertClick()"/></td>
+    </tr>
+  </table>
+</div>
+  <hr/>

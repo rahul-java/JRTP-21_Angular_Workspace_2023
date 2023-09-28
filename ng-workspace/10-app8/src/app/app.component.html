@@ -1,0 +1,48 @@
+<h1 class="text-center">Templet Driven Forms with Validation</h1>
+<p align="center" style="background-color: green;">{{msg}}</p>
+<form #bookForm="ngForm" appIdentityRevealed class="form-control w-50 mx-auto"
+     (ngSubmit)="onFormSubmit(bookForm.value)">
+     
+  
+<!-- <div class="cross-validation" [class.cross-validation-error]="bookForm.errors?.['appIdentityRevealed'] &&
+      (bookForm.touched || bookForm.dirty)"> -->
+ <div class="form-group container">
+<label for="bookname">Book Name :</label>
+  <input type="text" ngModel name="bookname" id="bookname" required minlength="4"maxlength="8"
+                       #bname="ngModel" class="form-control"/> 
+  <div *ngIf="bname.invalid && bname.touched" class="alert alert-danger">
+    <div *ngIf="bname.errors && bname.errors['required']" >Name is required</div>
+    <div *ngIf="bname.errors && bname.errors['minlength']" >Name must be atleast 4 character long</div>
+    <div *ngIf="bname.errors && bname.errors['maxlength']" >Name must be max 8 character long</div>
+    <div *ngIf="bname.errors && bname.errors['forbiddenName']" >Name can not be admin</div>
+  </div>                    
+  <br/>
+  </div>
+
+  <div class="form-group container">
+  <label for="bookisbn">Book ISBN :</label>
+  <input type="text" ngModel name="bookisbn" id="bookisbn" required minlength="4"
+                       #bisbn="ngModel" class="form-control"/> 
+  <div *ngIf="bisbn.invalid&&bisbn.touched" class="alert alert-danger">
+    <div *ngIf="bisbn.errors && bisbn.errors['required']">bookisbn is required</div>
+    <div *ngIf="bisbn.errors && bisbn.errors['minlength']">bookisbn must be atleast 4 character long</div>
+  </div>                    
+  <br/>
+  </div>
+  <div class="form-group container">
+  <label for="bookauthor">Book Author :</label>
+  <input type="text" ngModel name="bookauthor" id="bookauthor" required minlength="4"
+                       #bauthor="ngModel" class="form-control"/> 
+  <div *ngIf="bauthor.invalid&&bauthor.touched" class="alert alert-danger">
+    <div *ngIf="bauthor.errors && bauthor.errors['required']" >bookauthor is required</div>
+    <div *ngIf="bauthor.errors && bauthor.errors['minlength']" >bookauthor must be atleast 4 character long</div>
+  </div>                    
+  <br/>
+  </div>
+  <div class="form-group container text-center">
+  <p>Complete the form to enable submit button</p>
+  <button type="submit" [class.disabled]="bookForm.invalid" class="btn btn-primary">Submit</button>
+  <button type="button" (click)="bookForm.resetForm({})" class="btn btn-secondary">Reset</button>
+  </div>
+<!-- </div> -->
+</form>
