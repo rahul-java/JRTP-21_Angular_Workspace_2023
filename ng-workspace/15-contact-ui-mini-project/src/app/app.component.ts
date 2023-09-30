@@ -7,4 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = '15-contact-ui-mini-project';
+
+  searchText:string="";
+  
 }
